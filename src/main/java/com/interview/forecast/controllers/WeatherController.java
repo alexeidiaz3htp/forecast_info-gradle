@@ -24,7 +24,7 @@ public class WeatherController {
 
     @GetMapping("/forecastlist")
     public Map<String, Object> getCityWeatherInfo() {
-        String[] cities ={ 
+        String[] cities = { 
             "miami",
             "new york",
             "la habana"
@@ -32,7 +32,7 @@ public class WeatherController {
         Map<String, Object> citiesForecast = new HashMap<String, Object>(); 
         RestTemplate restTemplate = new RestTemplate();
 
-        for (String cities : city) {
+        for (String city : cities) {
             String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
             Object result = restTemplate.getForObject(uri, Object.class);
             citiesForecast.put(city, result);
