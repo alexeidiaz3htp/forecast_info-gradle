@@ -12,7 +12,7 @@ public class WeatherController {
 
     @GetMapping("/forecastlist/{city}")
     public Object getCityWeatherInfo(@PathVariable String city) {
-        String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
+        String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city.toUpperCase().trim() + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
         RestTemplate restTemplate = new RestTemplate();
         Object result = restTemplate.getForObject(uri, Object.class);
         return result;
