@@ -29,15 +29,15 @@ public class WeatherController {
             "new york",
             "la habana"
         ];
-        Map<String, Object> citiesForecast = new HashMap<String, Object>(); 
-        RestTemplate restTemplate = new RestTemplate();
+        // Map<String, Object> citiesForecast = new HashMap<String, Object>(); 
+        // RestTemplate restTemplate = new RestTemplate();
 
-        for (String cities : city) {
-            String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
-            Object result = restTemplate.getForObject(uri, Object.class);
-            citiesForecast.put(city, result);
-        }
+        // for (String cities : city) {
+        //     String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
+        //     Object result = restTemplate.getForObject(uri, Object.class);
+        //     citiesForecast.put(city, result);
+        // }
         
-        return citiesForecast;
+        return cities;
     }
 }
