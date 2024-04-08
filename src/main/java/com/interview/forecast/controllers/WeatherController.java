@@ -17,4 +17,23 @@ public class WeatherController {
         Object result = restTemplate.getForObject(uri, Object.class);
         return result;
     }
+
+    @GetMapping("/forecastlist")
+    public Map<String, Object> getCityWeatherInfo() {
+        String[] cities = [
+            "miami",
+            "new york",
+            "la habana"
+        ];
+        Map<String, Object> citiesForecast = new Map<String, Object>;
+        RestTemplate restTemplate = new RestTemplate();
+
+        for (String cities : city) 
+            String uri = "https://api.tomorrow.io/v4/weather/forecast?location=" + city + "&apikey=q01u3w688ZDOaJKdPQ8EpUY5PkAUkeKk";
+            Object result = restTemplate.getForObject(uri, Object.class);
+            citiesForecast.put(city, result);
+        }
+        
+        return citiesForecast;
+    }
 }
