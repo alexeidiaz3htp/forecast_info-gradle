@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 @RestController
 @RequestMapping("/api/v1")
 public class WeatherController {
@@ -25,7 +29,7 @@ public class WeatherController {
             "new york",
             "la habana"
         ];
-        Map<String, Object> citiesForecast = new Map<String, Object>();
+        Map<String, Object> citiesForecast = new HashMap<String, Object>(); 
         RestTemplate restTemplate = new RestTemplate();
 
         for (String cities : city) {
