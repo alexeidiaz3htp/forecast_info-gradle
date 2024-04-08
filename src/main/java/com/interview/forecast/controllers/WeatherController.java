@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Array;
 
 
 @RestController
@@ -25,11 +24,11 @@ public class WeatherController {
 
     @GetMapping("/forecastlist")
     public Map<String, Object> getCityWeatherInfo() {
-        String[] cities = new Array(
+        String[] cities ={ 
             "miami",
             "new york",
             "la habana"
-        );
+        };
         Map<String, Object> citiesForecast = new HashMap<String, Object>(); 
         RestTemplate restTemplate = new RestTemplate();
 
