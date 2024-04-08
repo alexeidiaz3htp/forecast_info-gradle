@@ -25,7 +25,7 @@ public class WeatherController {
             "new york",
             "la habana"
         ];
-        Map<String, Object> citiesForecast = new Map<String, Object>;
+        Map<String, Object> citiesForecast = new Map<String, Object>();
         RestTemplate restTemplate = new RestTemplate();
 
         for (String cities : city) {
